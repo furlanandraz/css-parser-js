@@ -1,0 +1,17 @@
+{
+  "name": "css-parser",
+  "version": "1.0.0",
+  "description": "CSS to JS object parser plugin",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node index.js",
+    "dev nodemon": "nodemon index.js"
+  },
+  "author": "Andraz Furlan",
+  "license": "ISC",
+  "dependencies": {
+    "console": "^0.7.2"
+  }
+}
