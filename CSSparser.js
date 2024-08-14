@@ -11,7 +11,8 @@ function parseCSStoJS(obj) {
             case 'transform':
                 let incoming = value.split(/(?<=\))/), outcoming = { prefix: [], numeric: [], unit: [], suffix: []};
                 incoming.forEach((value) => {
-                    outcoming.prefix = [...outcoming.prefix, value.match(cssPrefix) !== null && value.match(cssPrefix) !== '' ? Object.values(value.match(cssPrefix)).at(0) : ''];
+                    let name = value.match(cssPrefix)
+                    outcoming.prefix = [ ...outcoming.prefix, value.match(cssPrefix) !== null && value.match(cssPrefix) !== '' ? Object.values(value.match(cssPrefix)).at(0) : '' ];
                     outcoming.numeric = [...outcoming.numeric, Array.from(value.match(cssValue)).map(el => Number(el)) || ''];
                     outcoming.unit = [...outcoming.unit, value.match(cssUnit) !== null && value.match(cssUnit) !== '' ? Object.values(value.match(cssUnit)).at(0) : ''];
                     outcoming.suffix = [...outcoming.suffix, value.match(cssSuffix) !== null && value.match(cssSuffix) !== '' ? Object.values(value.match(cssSuffix)).at(0) : ''];
